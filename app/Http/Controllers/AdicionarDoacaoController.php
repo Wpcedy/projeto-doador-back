@@ -41,7 +41,7 @@ class AdicionarDoacaoController extends Controller
             'email' => $data['email'],
             'cpf' => $data['cpf'],
             'telefone' => $data['telefone'],
-            'dtnascimento' => $data['dtnascimento'],
+            'dtnascimento' => new \DateTime($data['dtnascimento']),
             'endereco' => $data['endereco'],
         ]);
     }
@@ -50,7 +50,7 @@ class AdicionarDoacaoController extends Controller
     {
         $newDoacao = [
             'pessoa' => $pessoa,
-            'dtcadastro' => $data['dtcadastro'],
+            'dtcadastro' => new \DateTime(),
             'tpdoacao' => $this->defineTipoDoacao($data['tpdoacao']),
             'valor' => $data['valor'],
         ];
